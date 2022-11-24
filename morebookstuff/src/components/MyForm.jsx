@@ -41,6 +41,54 @@ class MyForm extends Component {
                 title={book.title}
               ></SingleBook>
             ))}
+          {romance
+            .filter((book) =>
+              book.title.toLowerCase().includes(this.state.search)
+            )
+            .map((book) => (
+              <SingleBook
+                key={book.asin}
+                asin={book.asin}
+                image={book.img}
+                title={book.title}
+              ></SingleBook>
+            ))}
+          {scifi
+            .filter((book) =>
+              book.title.toLowerCase().includes(this.state.search)
+            )
+            .map((book) => (
+              <SingleBook
+                key={book.asin}
+                asin={book.asin}
+                image={book.img}
+                title={book.title}
+              ></SingleBook>
+            ))}
+          {history
+            .filter((book) =>
+              book.title.toLowerCase().includes(this.state.search)
+            )
+            .map((book) => (
+              <SingleBook
+                key={book.asin}
+                asin={book.asin}
+                image={book.img}
+                title={book.title}
+              ></SingleBook>
+            ))}
+          {fantasy
+            .filter((book) =>
+              book.title.toLowerCase().includes(this.state.search)
+            )
+            .map((book) => (
+              <SingleBook
+                key={book.asin}
+                asin={book.asin}
+                image={book.img}
+                title={book.title}
+              ></SingleBook>
+            ))}
         </Row>
       </Container>
     );
