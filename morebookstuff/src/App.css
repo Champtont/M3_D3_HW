@@ -41,8 +41,16 @@
 .myCards {
   position: relative;
 }
+.myCards > div {
+  background-color: rgb(244, 184, 111);
+  color: azure;
+  text-shadow: black 0px 0px 2px;
+}
 .badge {
   position: absolute;
   bottom: 0;
   right: 0;
+}
+.myForm {
+  margin-top: 3.5em;
 }
