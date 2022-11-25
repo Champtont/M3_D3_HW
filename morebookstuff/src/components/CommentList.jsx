@@ -6,11 +6,11 @@ class CommentList extends Component {
     comments: [],
   };
 
-  fetchComments = async () => {
+  fetchComments = async (id) => {
     //const token = "";
     try {
       let response = await fetch(
-        "https://striveschool-api.herokuapp.com/api/comments/",
+        `https://striveschool-api.herokuapp.com/api/comments/${id}`,
         {
           headers: {
             Authorization:
@@ -37,10 +37,20 @@ class CommentList extends Component {
     }
   };
 
-  componentDidMount() {}
+  componentDidMount() {
+    this.fetchComments(this.props.asin);
+  }
 
   render() {
-    return <ListGroup>some</ListGroup>;
+    return (
+      <ListGroup>
+        {this.props.selected?.comments.map((c) => (
+          <ListGroupItem key={c.asin}>
+            {c.rating} | {c.comment}
+          </ListGroupItem>
+        ))}
+      </ListGroup>
+    );
   }
 }
 
