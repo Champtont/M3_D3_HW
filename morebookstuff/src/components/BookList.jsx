@@ -6,13 +6,14 @@ import fantasy from "../data/fantasy.json";
 import { Container, Row } from "react-bootstrap";
 import SingleBook from "./SingleBook";
 
-const Booklist = () => {
+const Booklist = (props) => {
   return (
     <Container className="mt-5">
       <h2>Horror</h2>
       <Row>
         {horror.slice(0, 6).map((book) => (
           <SingleBook
+            setSelectedBook={props.alterState}
             key={book.asin}
             asin={book.asin}
             image={book.img}
@@ -26,7 +27,9 @@ const Booklist = () => {
       <Row>
         {romance.slice(0, 6).map((book) => (
           <SingleBook
+            setSelectedBook={props.alterState}
             key={book.asin}
+            asin={book.asin}
             image={book.img}
             title={book.title}
             color="pink"
@@ -38,6 +41,8 @@ const Booklist = () => {
       <Row>
         {scifi.slice(0, 6).map((book) => (
           <SingleBook
+            setSelectedBook={props.alterState}
+            asin={book.asin}
             key={book.asin}
             image={book.img}
             title={book.title}
@@ -50,7 +55,9 @@ const Booklist = () => {
       <Row>
         {history.slice(0, 6).map((book) => (
           <SingleBook
+            setSelectedBook={props.alterState}
             key={book.asin}
+            asin={book.asin}
             image={book.img}
             title={book.title}
             color="gold"
@@ -62,7 +69,9 @@ const Booklist = () => {
       <Row>
         {fantasy.slice(0, 6).map((book) => (
           <SingleBook
+            setSelectedBook={props.alterState}
             key={book.asin}
+            asin={book.asin}
             image={book.img}
             title={book.title}
             color="orange"
